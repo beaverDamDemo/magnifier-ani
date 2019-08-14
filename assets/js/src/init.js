@@ -1,14 +1,25 @@
 (function () {
   'use strict';
-  setTimeout(()=>{
-    play()
-  }, 1500)
 
-  $('main').addClass('active');
+  /* *** PRELOADER***/
+  var width = 100,
+    perfData = window.performance.timing,
+    EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+    time = parseInt((EstimatedTime/1000)%60)*100;
+  $('.loadbar').animate({
+    'width': width+'%'
+  }, time)
+
+  setTimeout(()=>{
+    $('#preloader').removeClass('active');
+  }, time)
+
+  setTimeout(()=>{
+    $('#preloader').addClass('display-none');
+    play()
+  }, time+1200)
 
   $('#playButton').hide();
-  $('body').removeClass('loading')
-  $('main').addClass('active');
   $('.navigation-wrapper').addClass('active');
 
   $('#playButton').one('click', function(e) {

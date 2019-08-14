@@ -13,8 +13,8 @@ function play() {
 }
 
 $(".navigation-wrapper .bullet").on('click', function() {
-	$('.bullet').removeClass('active')
-	$(this).addClass('active')
+	$('.bullet').addClass('active')
+	$(this).removeClass('active')
 	$(".label").removeClass('active')
 	var n = $(this).data('stage')
 	clearTimeout(autoplayFirstAniTimeout)
@@ -22,8 +22,6 @@ $(".navigation-wrapper .bullet").on('click', function() {
 	startAnimationStage(n)
 	stage_1_audioAlreadyRun = false
 })
-
-
 
 var canvas, stage, exportRoot, animationArray = [];
 function init_animation() {
@@ -56,6 +54,7 @@ function handleComplete(evt,comp) {
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.compositionLoaded(lib.properties.id);
 	stage.addChild(exportRoot);
+	AdobeAn.compositionLoaded(lib.properties.id);
 
 	animationArray = [
 	  exportRoot.animation.stage_0,
