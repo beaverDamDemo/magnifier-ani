@@ -9,7 +9,7 @@ function play() {
 	init_animation()
 	autoplayFirstAniTimeout = setTimeout(function() {
 		startAnimationStage(0)
-	}, 1000)
+	}, 750)
 }
 
 $(".navigation-wrapper .bullet").on('click', function() {
@@ -59,7 +59,6 @@ function handleComplete(evt,comp) {
 	animationArray = [
 	  exportRoot.animation.stage_0,
 	  exportRoot.animation.stage_1
-	  // exportRoot.animation.stage_2
 	];
 
 	createjs.Ticker.setFPS(lib.properties.fps);

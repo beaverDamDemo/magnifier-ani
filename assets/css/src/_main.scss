@@ -27,11 +27,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    cursor: not-allowed;
     filter: grayscale(0.875);
     transition: filter 0.45s;
     &.active {
       filter: none;
+      cursor: pointer;
     }
     & .bullet__inner {
       width: 72px;
@@ -42,6 +43,8 @@
     &:nth-child(2) .bullet__inner {
       background-position: 100% 0;
     }
-
+  }
+  a {
+    margin: 0 10px;
   }
 }
