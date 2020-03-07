@@ -7,7 +7,17 @@
       <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
       <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
       <link rel="stylesheet" href="assets/css/styles.min.css" />
-      <link rel="stylesheet" href="assets/fonts/MISTRAL.TTF">
+      <link rel="preload" href="assets/fonts/MISTRAL.ttf" as="font" crossorigin>
+      <style type="text/css">
+        @font-face {
+          font-family: "MISTRAL";
+          src: url("assets/fonts/MISTRAL.ttf");
+          src: url("assets/fonts/MISTRAL.ttf") format("ttf");
+        }
+        h1 {
+        font-family: 'MISTRAL';
+        }
+      </style>
       <title>magnifier-ani</title>
     </head>
 
